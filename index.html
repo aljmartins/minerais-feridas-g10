@@ -146,16 +146,28 @@
   <script src="./app.js"></script>
 
 <script>
-  // Prevenção de loop de download em dispositivos móveis para links PDF
+  // Solução definitiva para loop de PDF em mobile:
+  // Redireciona para Google Docs Viewer, que renderiza o PDF sem loop.
+  function isMobile() {
+    return /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|Mobile/i.test(navigator.userAgent);
+  }
+
   document.addEventListener('click', function(e) {
     const target = e.target.closest('a');
-    if (target && target.href.endsWith('.pdf')) {
-      // Em alguns navegadores móveis, o target="_blank" em PDFs causa o loop.
-      // Forçamos a abertura limpa.
-      if (/Android|iPhone|iPad/i.test(navigator.userAgent)) {
-        // No mobile, removemos o target blank se for PDF para deixar o sistema gerenciar
-        target.removeAttribute('target');
-      }
+    if (!target) return;
+
+    const href = target.getAttribute('href') || '';
+    const isPdf = href.toLowerCase().includes('.pdf') || href.toLowerCase().includes('pdf');
+
+    if (isPdf && isMobile()) {
+      e.preventDefault();
+      e.stopPropagation();
+      const pdfUrl = encodeURIComponent(target.href);
+      window.open(
+        'https://docs.google.com/viewer?url=' + pdfUrl,
+        '_blank',
+        'noopener,noreferrer'
+      );
     }
   }, true);
 </script>
