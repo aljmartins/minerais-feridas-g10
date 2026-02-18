@@ -57,7 +57,7 @@ const minerals = [
     evidencia: [
       { label: "Estudo Cobre (PubMed)", href: SOURCES.copperOxideDressingsPubMed },
     ],
-    tag: { text: "EM EXPANSÃO", color: PALETTE.blue },
+    tag: { text: "EM EXPANSÃO", color: PALETTE.orange },
   },
   {
     mineral: "Silício (Si) → Silicone",
@@ -66,7 +66,7 @@ const minerals = [
     evidencia: [
       { label: "Guia Silicone (PDF)", href: SOURCES.softSiliconeMadeEasyPdf },
     ],
-    tag: { text: "CONSOLIDADO", color: PALETTE.navy },
+    tag: { text: "CONSOLIDADO", color: PALETTE.orange },
   },
   {
     mineral: "Carbono (C) / Carvão",
@@ -75,7 +75,7 @@ const minerals = [
     evidencia: [
       { label: "Carvão + Prata (PubMed)", href: SOURCES.charcoalSilverStudyPubMed },
     ],
-    tag: { text: "PRAGMÁTICO (odor)", color: PALETTE.blue },
+    tag: { text: "PRAGMÁTICO (odor)", color: PALETTE.orange },
   },
   {
     mineral: "Níquel (Ni)",
@@ -109,9 +109,9 @@ const minerals = [
 
 const MINI_ELEMS = [
   { s: "Ag", n: "Prata", c: PALETTE.orange, u: "antimicrobiano" },
-  { s: "Cu", n: "Cobre", c: PALETTE.blue, u: "óxido de cobre" },
+  { s: "Cu", n: "Cobre", c: PALETTE.orange, u: "óxido de cobre" },
   { s: "Si", n: "Silício", c: PALETTE.navy, u: "silicone médico" },
-  { s: "C", n: "Carbono", c: PALETTE.blue, u: "carvão ativado" },
+  { s: "C", n: "Carbono", c: PALETTE.orange, u: "carvão ativado" },
   { s: "Ni", n: "Níquel", c: "rgba(11,18,32,0.45)", u: "sem uso ativo" },
   { s: "Co", n: "Cobalto", c: "rgba(11,18,32,0.45)", u: "sem uso ativo" },
   { s: "Sn", n: "Estanho", c: "rgba(11,18,32,0.45)", u: "soldas" },
